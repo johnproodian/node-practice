@@ -1,5 +1,6 @@
 // include http module
 const http = require('http');
+const dt = require('./practice-module');
 
 // create server
     // use http.createServer and pass in callback function that runs when an http request comes into the port that is being listened to
@@ -9,7 +10,7 @@ const server = http.createServer((req, res) => {
         // header needs to be text/html if we want to send back basic 'hello world' html
     res.writeHead(200, {'Content-Type': 'text/html'});
         // end the response
-    res.end('hi world')
+    res.end(`The date and time are currently ${dt.myDateTime()}`)
         // alternatively, could have used res.write() to send the message and then just ended with res.end()--right?
 })
 
